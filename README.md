@@ -1,45 +1,88 @@
 # 📈 ThinkorSwim Trading Studies & Scanners
+## Professional ThinkScript Stock Screeners & Technical Indicators for Day & Swing Trading
 
 > **Author:** Ran Eliahu | AI Cloud Engineer & Technical Trader  
 > **Platform:** TD Ameritrade / Schwab ThinkorSwim (TOS)  
 > **Language:** ThinkScript  
-> **Trading Style:** Algorithmic scanning, swing trading, momentum day trading
+> **Trading Style:** Algorithmic scanning, swing trading, momentum day trading, stock picking
 
 ---
 
 ## Overview
 
-This repository contains a curated set of professional-grade **ThinkScript studies and Stock Hacker scanners** built for ThinkorSwim. These tools are designed to systematically identify high-probability trading setups by combining **fundamental quality filters**, **technical momentum signals**, and **institutional activity detection**.
+This repository contains a **production-ready collection of ThinkScript stock scanners and technical analysis indicators** built for the Schwab ThinkorSwim trading platform. These automated stock screening tools identify high-probability trading opportunities by combining **fundamental stock filters**, **momentum indicators**, **volatility analysis**, and **institutional accumulation detection**.
 
-All scanners are actively used in a live trading workflow with a defined edge:
-- **Day trading window:** 8:30–10:30 AM CT on 5-minute charts
-- **Swing/position trading:** Daily and weekly charts on the S&P 500 universe
+Every scanner and study is actively used in live trading workflows with defined edges:
+- **Day trading scanner:** Intraday setups on 5-minute charts (8:30–10:30 AM CT)
+- **Swing trade finder:** Multi-day setups on daily charts (S&P 500 focus)
+- **Volatility & breakout scanner:** TTM Squeeze squeeze-fire detection
+- **Quality stock screening:** Fundamental + technical combination filters
+
+---
+
+## ⚡ Features at a Glance
+
+| Feature | Benefit |
+|---------|----------|
+| **4 Professional Scanners** | Eliminate manual stock screening—automate your watchlist |
+| **ThinkScript Code Examples** | Copy-paste ready; production-tested in live trading |
+| **Momentum & Breakout Detection** | TTM Squeeze Pro study + squeeze-fire alerts |
+| **Fundamental + Technical Combo** | Quality stock filters + technical entry signals |
+| **Institutional Smart Money Signals** | Detect accumulation before the big move |
+| **Mean Reversion Setup Finder** | Oversold high-quality stocks near moving averages |
+| **Day Trading & Swing Trading Ready** | Multiple timeframes: 5-min, daily, weekly |
+| **Full Setup Documentation** | Step-by-step import guide included |
+
+---
+
+## 🚀 Quick Start
+
+### For Beginners
+1. Download the `SETUP_GUIDE.md` and follow the ThinkorSwim import steps
+2. Start with **Elite Fundamentals Scanner** to build a quality watchlist
+3. Add **TTM Squeeze Pro** study to your charts for entry confirmation
+
+### For Experienced Traders
+1. Import all 4 scanners into Stock Hacker
+2. Run **Institutional Accumulation Scanner** daily at market close
+3. Run **TTM Squeeze Scanner** in "JustFired" mode at 9:45 AM CT for intraday setups
+4. Pair with your own risk management and position sizing
+
+### Recommended Setup
+```
+Watchlist Builder:      EliteFundamentals_Scanner.ts
+Entry Confirmation:     TTMSqueezePro_Study.ts + TTMSqueeze_Scanner.ts
+Mean Reversion Plays:   FallenAngels_Scanner.ts
+Institutional Clues:    InstitutionalAccumulation_Scanner.ts
+```
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-thinkorswim-studies/
+think-or-swim-trading-scanners/
 ├── scanners/
-│   ├── EliteFundamentals_Scanner.ts        # Quality fundamental filter
-│   ├── FallenAngels_Scanner.ts             # Oversold high-quality dip finder
-│   ├── InstitutionalAccumulation_Scanner.ts # Smart money detection
-│   └── TTMSqueeze_Scanner.ts               # Volatility compression scanner
+│   ├── EliteFundamentals_Scanner.ts        # Stock screening: P/E, ROE, fundamentals
+│   ├── FallenAngels_Scanner.ts             # Mean reversion: oversold quality stocks
+│   ├── InstitutionalAccumulation_Scanner.ts # Smart money detection & volume analysis
+│   └── TTMSqueeze_Scanner.ts               # Volatility scanner: squeeze detection
 ├── studies/
-│   └── TTMSqueezePro_Study.ts              # Full TTM Squeeze Pro chart study
-└── docs/
-    └── SETUP_GUIDE.md                      # Step-by-step TOS import guide
+│   └── TTMSqueezePro_Study.ts              # Technical indicator: momentum & breakout
+├── README.md                                # You are here
+├── SETUP_GUIDE.md                           # ThinkorSwim import tutorial
+└── .git/                                    # Version control
 ```
 
 ---
 
-## 🔍 Scanners
+## 🔍 Stock Scanners & Technical Screening Tools
 
-### 1. Elite Fundamentals Scanner
-**File:** `scanners/EliteFundamentals_Scanner.ts`
+### 1. Elite Fundamentals Scanner — Quality Stock Screener
+**File:** `scanners/EliteFundamentals_Scanner.ts`  
+**Use Case:** Build a curated watchlist for swing trading and position trading
 
-Filters the market for stocks with institutional-grade fundamentals. Designed to build a **watchlist of quality names** that are appropriate for swing or position trades.
+Automatically screens the market for stocks with **institutional-grade fundamentals**. This stock scanner filters based on profitability, balance sheet strength, and value metrics to identify quality names worthy of technical analysis.
 
 | Filter | Criteria |
 |--------|----------|
@@ -55,10 +98,11 @@ Filters the market for stocks with institutional-grade fundamentals. Designed to
 
 ---
 
-### 2. Fallen Angels Scanner
-**File:** `scanners/FallenAngels_Scanner.ts`
+### 2. Fallen Angels Scanner — Mean Reversion Stock Finder
+**File:** `scanners/FallenAngels_Scanner.ts`  
+**Use Case:** Identify oversold high-quality stocks near support
 
-Identifies **high-quality S&P 500 stocks** that have pulled back 8–25% from their 52-week highs but are showing early momentum recovery. Classic mean-reversion setup for buying strength at a discount.
+A specialized stock screener that finds **high-quality S&P 500 names** that have pulled back 8–25% from their 52-week highs but are showing early momentum recovery. Perfect for mean-reversion traders buying strength at a discount during market corrections.
 
 **Signal Logic:**
 - RSI(14) between 25–40 (oversold but not broken)
@@ -70,10 +114,11 @@ Identifies **high-quality S&P 500 stocks** that have pulled back 8–25% from th
 
 ---
 
-### 3. Institutional Accumulation Scanner
-**File:** `scanners/InstitutionalAccumulation_Scanner.ts`
+### 3. Institutional Accumulation Scanner — Smart Money Detection
+**File:** `scanners/InstitutionalAccumulation_Scanner.ts`  
+**Use Case:** Detect accumulation before institutional breakouts
 
-Detects stocks where **smart money is quietly accumulating** before a potential breakout. Tracks volume surges, VWAP positioning, and Money Flow Index to identify the accumulation phase.
+A unique stock scanner that identifies where **institutional smart money is quietly accumulating** before likely breakouts. Uses volume analysis, VWAP positioning, and Money Flow Index patterns to detect the accumulation phase before the big move.
 
 **Signal Logic:**
 - Volume ≥ 1.5× the 50-day average
@@ -87,10 +132,11 @@ Detects stocks where **smart money is quietly accumulating** before a potential 
 
 ---
 
-### 4. TTM Squeeze Scanner
-**File:** `scanners/TTMSqueeze_Scanner.ts`
+### 4. TTM Squeeze Scanner — Volatility Compression Detector
+**File:** `scanners/TTMSqueeze_Scanner.ts`  
+**Use Case:** Find breakout-ready stocks and intraday momentum setups
 
-Companion scanner to the TTM Squeeze Pro study. Three scan modes:
+A volatility-focused stock scanner built to complement the TTM Squeeze Pro technical indicator. Three powerful scanning modes for different trading timeframes:
 
 | Mode | Description | Best Run Time |
 |------|-------------|---------------|
@@ -100,12 +146,13 @@ Companion scanner to the TTM Squeeze Pro study. Three scan modes:
 
 ---
 
-## 📊 Studies
+## 📊 Technical Indicators & Studies
 
-### TTM Squeeze Pro — Enhanced Momentum Study
-**File:** `studies/TTMSqueezePro_Study.ts`
+### TTM Squeeze Pro — Advanced Momentum & Volatility Indicator
+**File:** `studies/TTMSqueezePro_Study.ts`  
+**Use Case:** Chart study for breakout and momentum confirmation
 
-An enhanced implementation of John Carter's classic TTM Squeeze indicator. Detects **volatility compression** (Bollinger Bands contracting inside Keltner Channels) followed by explosive momentum breakouts.
+A professional-grade technical indicator based on John Carter's famous TTM Squeeze. This momentum study detects **volatility compression** (Bollinger Bands contracting inside Keltner Channels) followed by explosive momentum breakouts—perfect for timing breakout entry signals.
 
 **Features:**
 - Dual Keltner Channel detection (standard + wide) for Pro-level squeeze identification
@@ -121,7 +168,7 @@ An enhanced implementation of John Carter's classic TTM Squeeze indicator. Detec
 
 ---
 
-## 🚀 How to Import into ThinkorSwim
+## 🚀 How to Import These Scanners into ThinkorSwim
 
 ### Importing a Study
 1. Open ThinkorSwim → **Charts**
