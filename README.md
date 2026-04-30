@@ -8,6 +8,8 @@
 
 ---
 
+This repository is a go-to collection of [thinkorswim scanners](https://github.com/Eliahur7/ThinkOrSwim) and custom column formulas designed to improve your scan workflow and watchlist performance.
+
 ## Overview
 
 This repository contains a **production-ready collection of ThinkScript stock scanners and technical analysis indicators** built for the Schwab ThinkorSwim trading platform. These automated stock screening tools identify high-probability trading opportunities by combining **fundamental stock filters**, **momentum indicators**, **volatility analysis**, and **institutional accumulation detection**.
@@ -71,6 +73,10 @@ think-or-swim-trading-scanners/
 │   └── TTMSqueezePro_Study.ts              # Technical indicator: momentum & breakout
 ├── README.md                                # You are here
 ├── SETUP_GUIDE.md                           # ThinkorSwim import tutorial
+├── custom columns/
+│   ├── CustomColumn_RSI_Momentum.ts
+│   ├── CustomColumn_Volume_Surge.ts
+│   └── CustomColumn_Trend_Strength.ts
 └── .git/                                    # Version control
 ```
 
