@@ -68,6 +68,7 @@ think-or-swim-trading-scanners/
 │   ├── EliteFundamentals_Scanner.ts        # Stock screening: P/E, ROE, fundamentals
 │   ├── FallenAngels_Scanner.ts             # Mean reversion: oversold quality stocks
 │   ├── InstitutionalAccumulation_Scanner.ts # Smart money detection & volume analysis
+│   ├── TrendReversal_Bullish_Scanner.ts    # Bearish to bullish inflection scanner
 │   └── TTMSqueeze_Scanner.ts               # Volatility scanner: squeeze detection
 ├── studies/
 │   └── TTMSqueezePro_Study.ts              # Technical indicator: momentum & breakout
@@ -149,6 +150,24 @@ A volatility-focused stock scanner built to complement the TTM Squeeze Pro techn
 | `InSqueeze` | Stocks currently coiling (BB inside KC) | Pre-market / after close |
 | `JustFired` | Squeeze fired today | 9:45 AM CT |
 | `BullishFired` | Bullish momentum squeeze only | 10:00–10:30 AM CT |
+
+---
+
+### 5. Trend Reversal Scanner — Bearish to Bullish Shift
+**File:** `scanners/TrendReversal_Bullish_Scanner.ts`  
+**Use Case:** Catch the earliest high-probability shift from downtrend to uptrend
+
+A technical scanner that identifies high-probability trend reversal inflection points where an oversold/depressed stock makes a decisive structural shift to the upside. Eliminates false positives by validating prior weakness and synchronizing MACD crossovers with 20 EMA breakouts across a multi-bar window.
+
+**Signal Logic:**
+- Confirms prior bearish pressure (traded below 20 EMA in >= 6 of last 10 bars)
+- Price breaks out or holds above 20 EMA with bullish candle structure
+- MACD crossover / expansion within 3 bars
+- RSI rebounds out of the cold zone (< 42) into bullish recovery (>= 45)
+- Institutional volume surge (> 1.15× 50-day average volume)
+- TTM Squeeze histogram expanding upward
+
+**Best used:** Daily chart for swing entries; 4-Hour or 60-min for early intraday momentum shifts.
 
 ---
 
