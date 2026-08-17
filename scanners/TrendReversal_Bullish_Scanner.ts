@@ -1,17 +1,19 @@
 # ============================================================
-# INSTITUTIONAL TREND REVERSAL SCANNER: BEARISH TO BULLISH (V3)
+# INSTITUTIONAL TREND REVERSAL SCANNER: BEARISH TO BULLISH (V4)
 # Author: Ran Eliahu (@Eliahur7)
 # Platform: TD Ameritrade / Schwab ThinkorSwim (TOS)
 # Language: ThinkScript
-# Timeframe: Daily chart (Stock Hacker)
+# Timeframe: Daily chart (Stock Hacker Native — No Multi-Timeframe Errors)
 #
 # Core Strategy & Edge:
-#   1. Strict Today-Confirmation: Today's candle MUST be holding 
-#      above the 20 EMA and green (rejects failed breakouts like BIRK -4%).
-#   2. Higher-Timeframe Weekly Alignment: Directly rejects stocks in 
-#      macro weekly bear down-cycles (weeds out BIRK, CELH, TSLA, METC).
+#   1. Macro Trend Guard: Uses the mathematical daily equivalent of the 
+#      Weekly 21 EMA (105-day EMA) & 5-week momentum (25-day momentum)
+#      to 100% eliminate Stock Hacker "Secondary period" errors while
+#      strictly rejecting macro bear down-cycles (BIRK, CELH, TSLA, METC).
+#   2. Strict Today-Confirmation: Today's candle MUST hold above the 
+#      20 EMA on a green/positive candle (rejects failed breakouts like BIRK -4%).
 #   3. Anti-Falling-Knife: 20 EMA must be flattening or curling upward.
-#   4. Base Building: Verifies prior depression + higher swing low support.
+#   4. Base Building: Verifies prior depression + higher swing low support floor.
 #   5. MACD & RSI Momentum Reclaim: Synchronized momentum recovery.
 #   6. Institutional Volume Expansion: Buying volume >= 50-day average.
 # ============================================================
@@ -26,19 +28,19 @@ input volumeLookback = 50;
 input volumeMultiplier = 1.05;
 input lookbackBars = 3;
 
-# ---- 1. HIGHER TIMEFRAME (WEEKLY) TREND GUARD ----
-# Matches your exact 'Trend(Wk)' logic: Rejects stocks below weekly 21 EMA with negative momentum
-def weekClose = close(period = AggregationPeriod.WEEK);
-def weekEma21 = ExpAverage(close(period = AggregationPeriod.WEEK), 21);
-def weekMom = weekClose - weekClose[5];
-def isWeeklyBear = weekClose < weekEma21 and weekMom < 0;
-def weeklyTrendOK = !isWeeklyBear;
+# ---- 1. MACRO TREND GUARD (Stock Hacker Native Weekly Equivalent) ----
+# Weekly 21 EMA = 105 Daily EMA (21 weeks * 5 days)
+# 5-Week Momentum = 25 Daily Momentum (5 weeks * 5 days)
+def macroEma = ExpAverage(close, 105);
+def macroMom = close - close[25];
+def isMacroBear = close < macroEma and macroMom < 0;
+def macroTrendOK = !isMacroBear;
 
 # ---- 2. DAILY MOVING AVERAGES & SLOPES ----
 def ema20 = ExpAverage(close, emaLength);
 def sma50 = Average(close, smaLength);
 
-# 20 EMA must NOT be in freefall (must be stabilizing/curling up)
+# 20 EMA must NOT be in steep freefall (must be stabilizing/curling up)
 def ema20Flattening = ema20 >= ema20[2] - (0.005 * close);
 
 # Price distance from 50 SMA (rejects severe breakdown traps)
@@ -83,7 +85,7 @@ def sqzTurningUp = sqzHist > sqzHist[1];
 def priceOK = close >= minPrice;
 
 # ---- COMBINED SCAN TRIGGER ----
-plot BullishReversalSignal = weeklyTrendOK
+plot BullishReversalSignal = macroTrendOK
                              and holdsAboveEmaToday
                              and wasDepressed 
                              and notSevereBreakdown 
