@@ -69,15 +69,20 @@ think-or-swim-trading-scanners/
 │   ├── FallenAngels_Scanner.ts             # Mean reversion: oversold quality stocks
 │   ├── InstitutionalAccumulation_Scanner.ts # Smart money detection & volume analysis
 │   ├── TrendReversal_Bullish_Scanner.ts    # Bearish to bullish inflection scanner
-│   └── TTMSqueeze_Scanner.ts               # Volatility scanner: squeeze detection
+│   ├── TTMSqueeze_Scanner.ts               # Volatility scanner: squeeze detection
+│   ├── VolumeProfile_Breakout_Scan.ts      # Volume Profile: Value Area Breakout
+│   └── VolumeProfile_Squeeze_Scan.ts       # Volume Profile: Value Area Compression
 ├── studies/
 │   └── TTMSqueezePro_Study.ts              # Technical indicator: momentum & breakout
+├── chart_visuals/
+│   └── Multi_Timeframe_POC_Study.ts        # Volume Profile: Naked POC Magnets
 ├── README.md                                # You are here
 ├── SETUP_GUIDE.md                           # ThinkorSwim import tutorial
 ├── custom columns/
 │   ├── CustomColumn_RSI_Momentum.ts
 │   ├── CustomColumn_Volume_Surge.ts
-│   └── CustomColumn_Trend_Strength.ts
+│   ├── CustomColumn_Trend_Strength.ts
+│   └── DistanceToPOC.ts                    # Volume Profile: Distance to POC %
 └── .git/                                    # Version control
 ```
 
@@ -171,6 +176,26 @@ A technical scanner that identifies high-probability trend reversal inflection p
 
 ---
 
+### 6. Volume Profile Squeeze Scanner
+**File:** `scanners/VolumeProfile_Squeeze_Scan.ts`  
+**Use Case:** Identify stocks compressing within a very tight Value Area before an explosive breakout.
+
+A volatility scanner focused entirely on volume. It calculates the percentage distance between the Value Area High (VAH) and Value Area Low (VAL). When this distance is extremely tight (e.g., < 2% of the stock price), it signals that massive institutional volume has coiled in a narrow band. 
+
+**Best used:** Daily chart for identifying impending swing momentum breakouts before they occur.
+
+---
+
+### 7. Value Area Breakout Scanner
+**File:** `scanners/VolumeProfile_Breakout_Scan.ts`  
+**Use Case:** Catch stocks escaping their volume nodes into low-liquidity zones.
+
+Scans for stocks breaking out above their Value Area High (VAH) with strong relative volume (e.g., 25% above 20-day average). When price escapes the Value Area, it tends to move rapidly through low-volume nodes.
+
+**Best used:** Daily chart for trend continuation and momentum entries.
+
+---
+
 ## 📊 Technical Indicators & Studies
 
 ### TTM Squeeze Pro — Advanced Momentum & Volatility Indicator
@@ -190,6 +215,21 @@ A professional-grade technical indicator based on John Carter's famous TTM Squee
 - Built-in alerts for bullish and bearish squeeze fires
 
 **Timeframes:** 5-minute (day trading) | Daily (swing trading)
+
+---
+
+### Multi-Timeframe POC Magnets — Volume Profile Study
+**File:** `chart_visuals/Multi_Timeframe_POC_Study.ts`  
+**Use Case:** Chart study to visualize hidden institutional support/resistance levels.
+
+Plots the Point of Control (POC) for the Daily (Cyan), Weekly (Magenta), and Monthly (Yellow) profiles. These heavy volume nodes act as massive "magnets" for price. Institutional algorithms often target these untested (naked) POC levels.
+
+**Features:**
+- Distinct, color-coded lines for Daily, Weekly, and Monthly POCs
+- Optional shading for the Value Area (VAH to VAL)
+- Easy toggles to hide/show specific timeframes
+
+**Timeframes:** Intraday (1m, 5m, 15m) or Daily charts
 
 ---
 
