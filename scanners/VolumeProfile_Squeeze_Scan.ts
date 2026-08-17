@@ -24,7 +24,8 @@ input minVolume = 1000000;
 
 # ---- VOLUME PROFILE CALCULATIONS ----
 # Use highly explicit parameters to ensure Stock Hacker calculates correctly
-profile volProfile = VolumeProfile("time per profile" = "DAY", "on expansion" = no);
+def dailyCond = GetYYYYMMDD() != GetYYYYMMDD()[1];
+profile volProfile = VolumeProfile("startNewProfile" = dailyCond, "onExpansion" = no);
 def vah = volProfile.GetHighestValueArea();
 def val = volProfile.GetLowestValueArea();
 

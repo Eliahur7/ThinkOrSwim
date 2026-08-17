@@ -23,7 +23,8 @@ input showWeeklyPOC = yes;
 input showMonthlyPOC = yes;
 
 # ---- DAILY POC ----
-profile dailyVol = VolumeProfile("time per profile" = "DAY", "on expansion" = no);
+def dailyCond = GetYYYYMMDD() != GetYYYYMMDD()[1];
+profile dailyVol = VolumeProfile("startNewProfile" = dailyCond, "onExpansion" = no);
 def dailyPOCLevel = if showDailyPOC then dailyVol.GetPointOfControl() else Double.NaN;
 plot DailyPOC = dailyPOCLevel;
 DailyPOC.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
@@ -33,7 +34,8 @@ DailyPOC.HideBubble();
 DailyPOC.HideTitle();
 
 # ---- WEEKLY POC ----
-profile weeklyVol = VolumeProfile("time per profile" = "WEEK", "on expansion" = no);
+def weeklyCond = GetWeek() != GetWeek()[1];
+profile weeklyVol = VolumeProfile("startNewProfile" = weeklyCond, "onExpansion" = no);
 def weeklyPOCLevel = if showWeeklyPOC then weeklyVol.GetPointOfControl() else Double.NaN;
 plot WeeklyPOC = weeklyPOCLevel;
 WeeklyPOC.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
@@ -44,7 +46,8 @@ WeeklyPOC.HideBubble();
 WeeklyPOC.HideTitle();
 
 # ---- MONTHLY POC ----
-profile monthlyVol = VolumeProfile("time per profile" = "MONTH", "on expansion" = no);
+def monthlyCond = GetMonth() != GetMonth()[1];
+profile monthlyVol = VolumeProfile("startNewProfile" = monthlyCond, "onExpansion" = no);
 def monthlyPOCLevel = if showMonthlyPOC then monthlyVol.GetPointOfControl() else Double.NaN;
 plot MonthlyPOC = monthlyPOCLevel;
 MonthlyPOC.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);

@@ -16,7 +16,8 @@
 # ============================================================
 
 # ---- VOLUME PROFILE POC ----
-profile volProfile = VolumeProfile("time per profile" = "DAY", "on expansion" = no);
+def dailyCond = GetYYYYMMDD() != GetYYYYMMDD()[1];
+profile volProfile = VolumeProfile("startNewProfile" = dailyCond, "onExpansion" = no);
 def poc = volProfile.GetPointOfControl();
 
 # ---- DISTANCE CALCULATION ----
