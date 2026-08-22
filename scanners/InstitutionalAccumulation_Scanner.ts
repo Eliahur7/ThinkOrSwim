@@ -1,6 +1,6 @@
 # ============================================================
 # INSTITUTIONAL ACCUMULATION SCANNER
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Description: Detects stocks showing signs of institutional
 #              buying — sustained above-average volume with
 #              price holding up or advancing. Identifies the

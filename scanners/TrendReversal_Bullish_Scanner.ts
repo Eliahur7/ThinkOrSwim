@@ -1,6 +1,6 @@
 # ============================================================
 # INSTITUTIONAL TREND REVERSAL SCANNER: BEARISH TO BULLISH (V4)
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Platform: TD Ameritrade / Schwab ThinkorSwim (TOS)
 # Language: ThinkScript
 # Timeframe: Daily chart (Stock Hacker Native — No Multi-Timeframe Errors)

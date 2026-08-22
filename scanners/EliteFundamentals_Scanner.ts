@@ -1,6 +1,6 @@
 # ============================================================
 # ELITE FUNDAMENTALS SCANNER
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Description: Filters for high-quality stocks with strong
 #              fundamentals suitable for swing and position trading.
 #

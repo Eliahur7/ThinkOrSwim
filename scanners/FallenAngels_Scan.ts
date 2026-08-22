@@ -1,7 +1,7 @@
 # ============================================
 # FALLEN ANGELS SCAN
-# Author: Eliahur7 + Claude | April 2026
-# Repository: https://github.com/Eliahur7/ThinkOrSwim-
+# Author: ran-eliahu + Claude | April 2026
+# Repository: https://github.com/ran-eliahu/ThinkOrSwim-
 # ============================================
 # DESCRIPTION:
 #   Scans for stocks that were previously strong (52-week high

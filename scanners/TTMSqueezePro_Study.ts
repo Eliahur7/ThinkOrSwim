@@ -1,6 +1,6 @@
 # ============================================================
 # TTM SQUEEZE PRO — ENHANCED MOMENTUM STUDY
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Based on: John Carter's TTM Squeeze concept
 # Description: Identifies periods of low volatility compression
 #              (Bollinger Bands inside Keltner Channels) followed

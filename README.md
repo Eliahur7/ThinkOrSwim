@@ -8,7 +8,7 @@
 
 ---
 
-This repository is a go-to collection of [thinkorswim scanners](https://github.com/Eliahur7/ThinkOrSwim) and custom column formulas designed to improve your scan workflow and watchlist performance.
+This repository is a go-to collection of [thinkorswim scanners](https://github.com/ran-eliahu/ThinkOrSwim) and custom column formulas designed to improve your scan workflow and watchlist performance.
 
 ## Overview
 
@@ -261,7 +261,7 @@ These tools are for **educational and informational purposes only**. Nothing in 
 
 ## 🤝 Connect
 
-- **GitHub:** [github.com/Eliahur7](https://github.com/Eliahur7)
+- **GitHub:** [github.com/ran-eliahu](https://github.com/ran-eliahu)
 - **LinkedIn:** [linkedin.com/in/raneliahu](https://www.linkedin.com/in/raneliahu)
 - **Medium:** [@Eliahu.ran](https://medium.com/@Eliahu.ran)
 

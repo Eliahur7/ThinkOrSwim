@@ -1,6 +1,6 @@
 # ============================================================
 # MULTI-TIMEFRAME POINT OF CONTROL (POC) MAGNETS
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Platform: TD Ameritrade / Schwab ThinkorSwim (TOS)
 # Language: ThinkScript
 # Timeframe: Recommended for Intraday (1m, 5m, 15m) or Daily

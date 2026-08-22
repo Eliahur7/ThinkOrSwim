@@ -1,6 +1,6 @@
 # ============================================================
 # VALUE AREA BREAKOUT SCANNER
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Platform: TD Ameritrade / Schwab ThinkorSwim (TOS)
 # Language: ThinkScript
 # Timeframe: Daily

@@ -1,6 +1,6 @@
 # 📦 Chart OB Visuals — Order Block Study for ThinkorSwim
 
-> **Author:** Ran Eliahu | [github.com/Eliahur7](https://github.com/Eliahur7)  
+> **Author:** Ran Eliahu | [github.com/ran-eliahu](https://github.com/ran-eliahu)  
 > **Platform:** TD Ameritrade / Schwab ThinkorSwim (TOS)  
 > **Language:** ThinkScript  
 > **Chart Type:** Overlay Study (upper panel)
@@ -168,4 +168,4 @@ This study is for **educational and informational purposes only**. Order Blocks 
 ---
 
 *Built with ThinkScript | Powered by data-driven discipline*  
-*Part of the [Eliahur7/ThinkOrSwim](https://github.com/Eliahur7/ThinkOrSwim) repository*
+*Part of the [ran-eliahu/ThinkOrSwim](https://github.com/ran-eliahu/ThinkOrSwim) repository*

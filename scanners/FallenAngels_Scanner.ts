@@ -1,6 +1,6 @@
 # ============================================================
 # FALLEN ANGELS SCANNER
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Description: Identifies high-quality S&P 500 stocks that have
 #              pulled back significantly from their 52-week highs
 #              but are showing early signs of recovery.

@@ -1,6 +1,6 @@
 # ============================================================
 # TTM SQUEEZE PRO — SCANNER COMPANION
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Description: Stock Hacker scan to find stocks currently IN
 #              a squeeze or that just FIRED a squeeze signal.
 #              Use alongside TTMSqueezePro_Study.ts on charts.

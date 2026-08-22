@@ -1,6 +1,6 @@
 # ============================================================
 # DISTANCE TO POC (POINT OF CONTROL) WATCHLIST COLUMN
-# Author: Ran Eliahu (@Eliahur7)
+# Author: Ran Eliahu (@ran-eliahu)
 # Platform: TD Ameritrade / Schwab ThinkorSwim (TOS)
 # Language: ThinkScript
 #

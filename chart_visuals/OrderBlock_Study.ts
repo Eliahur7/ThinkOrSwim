@@ -1,5 +1,5 @@
 # OrderBlock_Study.ts
-# Author: Ran Eliahu | github.com/Eliahur7
+# Author: Ran Eliahu | github.com/ran-eliahu
 # Platform: TD Ameritrade / Schwab ThinkorSwim (TOS)
 # Language: ThinkScript
 # Description: Detects and plots Bullish and Bearish Order Blocks on the chart

@@ -1,7 +1,7 @@
 # ============================================
 # ABOUT TO BREAK OUT SCAN
-# Author: Eliahur7 + Claude | April 2026
-# Repository: https://github.com/Eliahur7/ThinkOrSwim-
+# Author: ran-eliahu + Claude | April 2026
+# Repository: https://github.com/ran-eliahu/ThinkOrSwim-
 # ============================================
 # DESCRIPTION:
 #   Scans for stocks coiling near a breakout point — price is
